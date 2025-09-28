@@ -1,0 +1,23 @@
+<template>
+  <h1>Quotation: {{ quote }}</h1>
+  <div>
+    <label >Write Your Quote</label>
+    <input type="text" v-model="quote" />
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+export default {
+
+  setup(){
+    const quote = ref('');
+    return { quote  };
+  }
+
+}
+</script>
+
+<style>
+
+</style>

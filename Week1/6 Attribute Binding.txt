@@ -1,0 +1,70 @@
+Attribute binding : គឺជាការភ្ជាប់ Dynamix value របស់ Attribute ភ្ជាប់ទៅនឹង HTML Element 
+
+-Static value :
+
+ <p>This is our link <a href="https://web.facebook.com/?_rdc=1&_rdr#">Facebook</a></p>
+
+- Dynamix :
+
+ <p>This is our link <a v-bind:href="url">Facebook</a></p>
+
+
+export default {
+
+  setup(){
+    const url = ref('https://web.facebook.com/?_rdc=1&_rdr#')
+    return {url}
+  }
+
+}
+
+
+1- first create variable to store the url in string 
+
+const url = ref('https://web.facebook.com/?_rdc=1&_rdr#')
+
+
+2. Bind the attribute from the vue to html 
+
+v-bind:href or :href
+
+
+======================================
+
+<template>
+  <div>
+    <h1>Facebook Link</h1>
+    <p>This is our link <a v-bind:href="url">Facebook</a></p>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+
+  setup(){
+    const url = ref('https://web.facebook.com/?_rdc=1&_rdr#')
+    return {url}
+  }
+
+}
+</script>
+
+<style>
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

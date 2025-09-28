@@ -1,0 +1,41 @@
+<template>
+  <div>
+    <h1>Social Media</h1>
+    <ul>
+      <li v-for="(item, index) in urls" :key="index">
+        <a :href="item.link" target="_blank">{{ item.brand }}</a>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const urls = ref([
+      {
+        brand: "Facebook",
+        link: "https://web.facebook.com/?_rdc=1&_rdr",
+      },
+      {
+        brand: "Instagram",
+        link: "https://www.instagram.com/",
+      },
+      {
+        brand: "Twitter",
+        link: "https://twitter.com/i/flow/login",
+      },
+      {
+        brand: "TikTok",
+        link: "https://www.tiktok.com/en/",
+      },
+    ]);
+    return { urls };
+  },
+};
+</script>
+
+<style>
+</style>

@@ -1,0 +1,39 @@
+- Method : is the function action 
+- Event : what is the user action from web browser 
+
+=======================================
+
+<template>
+  <div>
+    <h1>Hello Vue.js</h1>
+    <h2>Auther: {{ auther }}</h2>
+    <h2>Title : {{ title }}</h2>
+    <button v-on:click="handleChangeTitle">Change Title!</button>
+  </div>
+  
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+
+  setup(){
+    const auther = ref('');
+    const title = ref('');
+
+    const handleChangeTitle = () => {
+      title.value = 'Long Vibol';
+    }
+
+    return {
+      auther, title, handleChangeTitle
+    }
+  }
+
+}
+</script>
+
+<style>
+
+</style>

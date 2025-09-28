@@ -1,0 +1,40 @@
+<template>
+  <div>
+    <h1>Product</h1>
+    <ol>
+      <li v-for="(item, index) in products" :key="index">
+       Product Name: {{ item.name }} & price: {{ item.price }} $
+      </li>
+
+    </ol>
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const products = ref([
+      {
+        name: "Socks",
+        price: 100,
+      },
+      {
+        name: "Shose",
+        price: 15,
+      },
+      {
+        name: "Tshirt",
+        price: 150,
+      },
+    ]);
+
+    return {
+      products,
+    };
+  },
+};
+</script>
+
+<style></style>

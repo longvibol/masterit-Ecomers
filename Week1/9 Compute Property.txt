@@ -1,0 +1,30 @@
+<template>
+  <h1>Compute Property: {{ compose }}</h1>
+  <div>
+    <label >name</label>
+    <input type="text" v-model="name" />
+      <label >greeting</label>
+    <input type="text" v-model="greeting" />
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+import { computed } from 'vue';
+export default {
+
+  setup(){
+    const name = ref('');
+    const greeting = ref('');
+    const compose = computed(() =>{
+      return name.value + ', '+ greeting.value;
+     });
+    return { name, greeting, compose  };
+  }
+
+}
+</script>
+
+<style>
+
+</style>

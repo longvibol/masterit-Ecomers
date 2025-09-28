@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <h1 v-show="show">show and Hide Button</h1>
+    <button v-on:click="showButton">Show Buton</button>
+    <button v-on:click="hideButton">Hide Buton</button>
+  </div>
+  
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+
+  setup(){
+    const show = ref(true);
+
+
+    const showButton = () => {
+      show.value = true;
+    }
+
+    const hideButton = () => {
+      show.value = false;
+    }
+
+    return {
+      show,
+      showButton,
+      hideButton
+    }
+  }
+
+}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,54 @@
+<template>
+  <div v-on:mouseover="handleOver" class="box">
+    <p>Mouse Over</p>
+  </div>
+
+  <div v-on:mouseleave="handleLeave" class="box">
+    <p>Mouse Leave</p>
+  </div>
+
+  <div v-on:dblclick="handleDo" class="box">
+    <p>Double Click</p>
+  </div>
+
+  <div v-on:click="handleClick" class="box">
+    <p>Mouse Click</p>
+  </div>
+</template>
+
+<script>
+export default {
+  setup() {
+    const handleOver = (e) => {
+      alert("Mouse Over Event Triggered" + e.type);
+    };
+
+    const handleLeave = (e) => {
+      alert("Mouse Leave Event Triggered" + e.type);
+    };
+
+    const handleDo = (e) => {
+      alert("Double Click Event Triggered" + e.type);
+    };
+    const handleClick = (e) => {
+      alert("Mouse Click Event Triggered" + e.type);
+    };
+    return { handleOver, handleLeave , handleDo, handleClick};
+  },
+};
+</script>
+
+<style>
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 200px;
+  display: inline-block;
+  /* padding-top: 10px; */
+  margin: 10px;
+}
+
+</style>

@@ -1,0 +1,56 @@
+1-Create component :
+
+touch src/components/MyComponent.vue
+
+2-inport to app.vue
+
+import HelloWorld from './components/HelloWorld.vue';
+
+or 
+
+import HelloWorld from '@/components/HelloWorld.vue';
+
+----------------------------
+
+
+
+<template>
+  <h1 ref="h1">Template Ref</h1>
+  <button @click="changeTem">Change Template</button>
+  <HelloWorld />
+</template>
+
+<script>
+import { ref } from 'vue';
+import HelloWorld from '@/components/HelloWorld.vue';
+
+export default {
+  components: {
+    HelloWorld
+  },
+
+  setup(){
+    const h1 =ref('');
+
+    const changeTem =()=>{
+      h1.value.classList.add('gientclass');
+      h1.value.innerHTML = 'Changed Template Ref bule';
+    } 
+    return {h1, changeTem};
+  }
+
+}
+</script>
+
+<style>
+.gientclass {
+  color: blue;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+h1 {
+  color: red;
+}
+
+</style>

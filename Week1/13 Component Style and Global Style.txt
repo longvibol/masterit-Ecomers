@@ -1,0 +1,74 @@
+1-Local Component Style: 
+
+To scoped the style in component we use < scoped>
+
+
+- In component : Introduction.vue 
+
+<template>
+  <div class="app">
+    <h1>Introduction Component</h1>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.app {
+  text-align: center;
+  margin-top: 50px;
+  color: green ;
+}
+</style>
+
+2- Global style 
+
+-create our style name what every you want :  in the assets folder
+
+- create globle.css :
+
+h1{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+- in the main.js we import globle.css 
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import './assets/global.css'
+
+createApp(App).mount('#app')
+
+
+
+--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

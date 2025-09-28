@@ -1,0 +1,72 @@
+1 create new project :
+
+>> vue create myfirstproject
+
+>> npm run serve 
+
+---------------------------
+
+In App.vue : 
+
+<template>
+  <div>
+    <h1>hello {{auther}} -- {{age}}</h1>
+    <input type="text" v-model="auther">
+    <input type="number" v-model="age">
+    <button @click="age++">age++</button>
+    <button @click="age--">age--</button>
+  </div>
+  
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  setup() {
+
+    const auther = ref('Name');
+    const age = ref(18);
+    return {auther, age};
+  },
+
+}
+</script>
+
+
+<style>
+
+</style>
+
+
+------------------------------
+
+Explain: setup(){} is the startup variable 
+
+
+
+export default {
+  setup() {
+
+    const auther = ref('Name');
+    const age = ref(18);
+    return {auther, age};
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

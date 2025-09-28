@@ -1,0 +1,76 @@
+We want to show switching component: 
+
+1- Create component to show:
+
+
+<div>
+    <h1>Dynamic Component</h1>
+    <component :is="CurrentComponent" />
+    <button @click="handleSwitch('HelloWorld')">Show HelloComponent</button>
+    <button @click="handleSwitch('Introduction')">Show Introduction Component</button>
+  </div>
+
+
+setup(){
+    const CurrentComponent = ref('');
+    const handleSwitch = (component) => {
+      CurrentComponent.value = component;      
+    };
+
+    return {
+      CurrentComponent,
+      handleSwitch
+    };
+  }
+
+
+==================================================
+
+
+<template>
+  <div>
+    <h1>Dynamic Component</h1>
+    <component :is="CurrentComponent" />
+    <button @click="handleSwitch('HelloWorld')">Show HelloComponent</button>
+    <button @click="handleSwitch('Introduction')">Show Introduction Component</button>
+  </div>
+  
+</template>
+<script>
+import { ref } from 'vue';
+import HelloWorld from './components/HelloWorld.vue'
+import Introduction from './components/Introduction.vue'
+export default {
+  components: {
+    HelloWorld,
+    Introduction
+  },
+
+  setup(){
+    const CurrentComponent = ref('');
+    const handleSwitch = (component) => {
+      CurrentComponent.value = component;      
+    };
+
+    return {
+      CurrentComponent,
+      handleSwitch
+    };
+  }
+
+}
+</script>
+
+
+<style>
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>

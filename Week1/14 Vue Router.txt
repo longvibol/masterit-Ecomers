@@ -1,0 +1,98 @@
+- Vue Router : when it use in first time it request to server, but later on it will not request to server it will use from 
+vue router 
+
+1- Install Vue Router 
+
+>> vue add router
+
+--> it will create two folder : router and views 
+
+-router have index.js : use for register page 
+- views : to store the page 
+
+
+--------------- Router : index.js 
+
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  }
+]
+
+This is where we put the end point 
+
+------------------------------------------------- views folder: We put our vue page 
+
+AboutView.vue, HomeView.vue ...
+
+
+--------------------------------------------
+
+How to put the link : we put in the App.vue (main template) 
+
+
+<template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+    <router-link to="/register">Register</router-link>
+    <!-- <a href="/">Home</a>
+    <a href="/about">About</a> -->
+  </nav>
+  <router-view/>
+</template>
+
+
+==============================================================
+
+
+if we use <a href="/">Home</a> : it will request to the server all the time 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+1-Teamplate ref : ដើម្បីធ្វើការផ្លាស់ប្តូរ​​ style 
+
+-  <h1 ref="h1">Template Ref</h1> យើងដាក់ ref អោយ class that have class name h1
+-  h1.value.classList.add('gientclass'); we change the class from h1 to gientclass
+-  h1.value.innerHTML = 'Changed Template Ref bule'; change text in html 
+
+
+================================================================
+
+<template>
+  <h1 ref="h1">Template Ref</h1>
+  <button @click="changeTem">Change Template</button>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+
+  setup(){
+    const h1 =ref('');
+
+    const changeTem =()=>{
+      h1.value.classList.add('gientclass');
+      h1.value.innerHTML = 'Changed Template Ref bule';
+    } 
+    return {h1, changeTem};
+  }
+
+}
+</script>
+
+<style>
+.gientclass {
+  color: blue;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+h1 {
+  color: red;
+}
+
+</style>

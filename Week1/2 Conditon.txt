@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <h1>Hello Vue.js</h1>
+    <h2 v-show="toggle">Auther: {{ auther }}</h2>
+    <h2>Title : {{ title }}</h2>
+    <button v-on:click="handleToggleAuther">Toggle Auther</button>
+  </div>
+  
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+
+  setup(){
+    const auther = ref('');
+    const title = ref('');
+    const toggle = ref(false);
+
+    const handleToggleAuther = () => {
+      toggle.value = !toggle.value;
+    }
+
+    return {
+      auther, title, handleToggleAuther,toggle
+    }
+  }
+
+}
+</script>
+
+<style>
+
+</style>
